@@ -18,20 +18,22 @@
 
 
   <!-- Rating state start -->
-<div class="card-container rating">
-
+<div class="card-container rating active">
+<span class="star-img">
+<img src="./images/icon-star.svg" alt="star">
+</span>
 
   <h1>How did we do?</h1>
 
   <p>Please let us know how we did with your support request. All feedback is appreciated
   to help us improve our offering!</p>
 
-<ol>
-  <li>1</li> 
-  <li>2</li>
-  <li>3</li>
-  <li>4</li>
-  <li>5</li>
+<ol class="rating-numbers">
+  <li value="1">1</li> 
+  <li value="2">2</li>
+  <li value="3">3</li>
+  <li value="4">4</li>
+  <li value="5">5</li>
 </ol>
 
  <button class="submit"> Submit </button>
@@ -40,16 +42,17 @@
 
   <!-- Thank you state start -->
 <div class="card-container thank-you">
- <p> You selected <span class="selected-rating"><!-- Add rating here --></span> out of 5 </p>
+  <img src="./images/illustration-thank-you.svg" alt="thank you">
+ <p class="selected-rating"> You selected <span><!-- Add rating here --></span> out of 5 </p>
 
   <h2>Thank you!</h2>
 
- <p> We appreciate you taking the time to give a rating. If you ever need more support,
+ <p class="appreciation"> We appreciate you taking the time to give a rating. If you ever need more support,
   don’t hesitate to get in touch!</p>
 </div>
   <!-- Thank you state end -->
 
 </div>
 </body>
-
+<script src="./index.js"></script>
 </html>
