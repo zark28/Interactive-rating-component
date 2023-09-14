@@ -1,12 +1,12 @@
+ /* Imports*/
  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Overpass:wght@400;500;700&family=Raleway:wght@100;200;300;400;500;600;700;800&family=Sarabun:wght@200;400;500;600&display=swap');
 /* Global styles */
  *{box-sizing: border-box;}
-
+/* Base Styles */
  body {
    margin: 0;
   padding: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
   height: 100dvh;
   font-size: 15px;
@@ -15,9 +15,13 @@
   background-color: hsl(0, 0%, 100%);
 }
 
-a {color: hsl(228, 45%, 44%); }
-ol{list-style: none; color: hsl(216, 12%, 54%);}
+ol{
+  list-style: none; 
+  color: hsl(216, 12%, 54%);
+  }
+
 p{color:hsl(216, 12%, 54%);}
+
 h1,h2{
   color:hsl(0, 0%, 100%) ;
   font-weight: 700;
@@ -25,7 +29,7 @@ h1,h2{
   width: 100%;
 }
   
-    /* main container */
+    /* Main Container */
 .container{
   display: flex;
   align-items: center;
@@ -33,9 +37,11 @@ h1,h2{
   max-width: 1440px;
   width: 100%;
   height: 100%;
+  padding: 10px;
   background-color: black;
 }
-/* rating card container */
+
+/* card container */
 
 .card-container{
   display: flex;
@@ -43,22 +49,26 @@ h1,h2{
   align-items: center;
   justify-content: center;
   background-color:hsl(216, 12%, 8%) ;
-  width: 340px;
-  height: 378px;
-  padding: 20px;
+  max-width: 340px;
+  height: 398px;
+  padding: 20px 30px;
   border-radius: 20px;
 }
+
+
 .active:is(.rating,.thank-you){
   display: flex;
   opacity: 1;
   transition: all .3s ease-in-out;
-  animation: cardDisplay 2s ease-in-out forwards;
+  animation: cardDisplay .4s ease-in-out forwards;
 }
 
 .rating,.thank-you{
    display:none;
   transition: all .3s ease-in-out;
 }
+
+/* Rating card */
 .star-img{
   width: 100%;
   text-align: left;
@@ -131,7 +141,7 @@ h1,h2{
   color: hsl(25, 97%, 53%);
 }
 
- 
+ /* Thank you card */
 .thank-you p ,h2{
   text-align: center;
 }
@@ -143,7 +153,11 @@ h1,h2{
   border-radius: 15px;
 }
 
+/* Media queries */
 @media screen and (max-width:768px) {
+  .card-container{
+  width: 100%;
+  }
   .rating-numbers li:hover{
   color:  hsl(0, 0%, 100%);
   background-color:hsl(217, 12%, 63%);
@@ -154,6 +168,7 @@ h1,h2{
 }
 }
 
+/* card navigation animation */
 @keyframes cardDisplay {
   0% {scale: 0;}
   100% {scale: 1;}
