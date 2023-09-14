@@ -18,13 +18,25 @@ selectedRating = event.target.value
 
 // handle submit action
 function handleSubmit(){
-container.firstElementChild.classList.toggle('active')
-container.lastElementChild.classList.toggle('active')
-displayRating.innerHTML = selectedRating
+    if(selectedRating <= 0){
+        alert('Please Select a rating')
+        return;
+    }
+    container.firstElementChild.classList.toggle('active')
+    container.lastElementChild.classList.toggle('active')
+    displayRating.innerHTML = selectedRating
+    // setTimeout( handleReset,6000)
 }
 
+function handleReset(){
+  ratingNumbers.forEach(rating=> rating.classList.remove('active'))
+  selectedRating=0
+  container.firstElementChild.classList.toggle('active')
+  container.lastElementChild.classList.toggle('active') 
+}
 
 
 // Add event listiners
 ratingContainer.addEventListener('click',setActiveRating)
 button.addEventListener('click',handleSubmit)
+

@@ -49,12 +49,14 @@ h1,h2{
   border-radius: 20px;
 }
 .active:is(.rating,.thank-you){
-  display:flex ;
+  display: flex;
+  opacity: 1;
   transition: all .3s ease-in-out;
+  animation: cardDisplay 2s ease-in-out forwards;
 }
 
 .rating,.thank-you{
-  display: none;
+   display:none;
   transition: all .3s ease-in-out;
 }
 .star-img{
@@ -102,12 +104,7 @@ h1,h2{
   background-color:hsl(25, 97%, 53%) ;
 }
 
-@media screen and (max-width:768px) {
-  .rating-numbers li:hover{
-  color:  hsl(0, 0%, 100%);
-  background-color:hsl(217, 12%, 63%);
-}
-}
+
 .rating-numbers .active{
   color:  hsl(0, 0%, 100%);
   background-color:hsl(217, 12%, 63%);
@@ -144,4 +141,20 @@ h1,h2{
   background-color: hsl(213, 19%, 18%);
   padding: 5px 15px;
   border-radius: 15px;
+}
+
+@media screen and (max-width:768px) {
+  .rating-numbers li:hover{
+  color:  hsl(0, 0%, 100%);
+  background-color:hsl(217, 12%, 63%);
+}
+.submit:hover{
+   color: hsl(0, 0%, 100%);
+  background-color: hsl(25, 97%, 53%);
+}
+}
+
+@keyframes cardDisplay {
+  0% {scale: 0;}
+  100% {scale: 1;}
 }
